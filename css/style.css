@@ -1,0 +1,419 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+.container{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+.button-primary{
+    border: 2px solid;
+    padding: 1rem 1.5rem;
+    margin-top: 0.5rem;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 5rem;
+    cursor: pointer;
+    color: white;
+    background: #117964;
+}
+
+/* ############### NAVBAR STYLING ############ */
+
+.navbar{
+    box-shadow: 5px 5px 10px #aaa;
+    position: fixed;
+    width: 100%;
+    opacity: 0.85;
+    display: flex;
+    background-color: #fff;
+    color: #000;
+    z-index: 999;
+}
+.navbar-container{
+    display: flex;
+    height: 64px;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu-elements{
+    order: 2;
+    display: flex;
+    color: #000;
+}
+.menu-elements li{
+    margin-left: 1.5rem;
+    font-size: larger;
+}
+.nav-logo{
+    order: 1;
+}
+.nav-a:hover{
+    color: #117964;
+}
+.navbar input[type="checkbox"]{
+    display: none;
+}
+.navbar .hamburger-lines{
+    display: none;
+}
+
+/* ############### HEADER " SHOWCASE " ############## */
+
+.showcase-area{
+    background: url(../images/header-image2.jpg);
+    height: 50vh;
+    /* width: 1200px; */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.showcase-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-size: larger;
+}
+.showcase-button{
+    color: white;
+    background-color: #117964;
+}
+
+/* ############ ABOUT US ########## */
+
+.about{
+    padding-top: 5rem;
+    background-color: #f5f5f7;
+}
+.aboutus{
+    display: flex;
+}
+.aboutus-content{
+    width: 50%;
+    transform: translateX(-150%);
+    animation-name: slideleft;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    margin: auto;
+}
+@keyframes slideleft{
+    100%{
+        transform: translate(0);
+    }
+}
+.aboutus-image{
+    width: 50%;
+    transform: translateX(150%);
+    animation-name: slideright;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes slideright{
+    100%{
+        transform: translate(0);
+    }
+}
+.aboutus-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: right;
+}
+.about-pone{
+    font-size: larger;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    border-bottom: 2px solid red;
+}
+.about-h3{
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+}
+.about-plast{
+    padding-left: 1rem;
+}
+/* ############ SECTION 2 ########### */
+
+.section2{
+    padding-top: 5rem;
+}
+.section2-p{
+    text-align: center;
+    font-size: larger;
+    color: #555;
+    padding-bottom: 1rem;
+}
+.section2-images{
+    display: flex;
+    justify-content: space-between;
+}
+.section2-images img{
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    max-height: 300px;
+    margin: auto;
+}
+.image1-container{
+    margin-right: 1rem;
+    position: relative;
+}
+.image2-container{
+    margin-right: 1rem;
+    position: relative;
+}
+.image3-container{
+    position: relative;
+}
+.image-content{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 2;
+    transition: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+.image-container::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0000007e;
+    opacity: 0;
+    z-index: 1;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    transform: scaleY(0);
+    transform-origin: 100% 100%;
+}
+.image-container:hover::after{
+    opacity: 1;
+    transform: scaleY(1);
+}
+.image-container:hover .image-content{
+    opacity: 1;
+    top: 50%;
+}
+
+/* ########## SECTION 3, FOOD MENU ########## */
+
+.menu-p{
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    font-size: larger;
+    color: #555;
+    text-align: center;
+}
+.menu-item{
+    display: flex;
+    flex-wrap: wrap;
+}
+.items{
+    width: 50%;
+    display: flex;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+.menu-image img{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+.food-description{
+    margin-left: 1rem;
+    color: #555;
+}
+.food-price{
+    color: #117964;
+}
+
+/* ########## SECTION 4, TESTIMONIAL ########### */
+
+.section4{
+    background: #f5f5f7;
+}
+.testimonial-heading{
+    padding-top: 5rem;
+    text-align: center;
+    color: #555;
+    padding-bottom: 1rem;
+}
+.testimonial{
+    display: flex;
+}
+.tasty{
+    width: 33.3333%;
+    text-align: center;
+}
+.tasty img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin-top: 1rem;
+}
+.testimonial-one{
+    margin-right: 2rem;
+}
+.testimonial-two{
+    margin-right: 2rem;
+}
+.tasty p{
+    padding-top: 1rem;
+}
+.icon{
+    color: #ffba75;
+}
+
+/* ########## SECTION 5, CONTACT US */
+
+.contact{
+    display: flex;
+    /* background-color: #ffba75; */
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.contact-sec{
+    width: 50%;
+}
+.contact-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.contact-form{
+    padding: 1rem;
+}
+/* .contact-form input{
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    padding: 1rem 0;
+    box-shadow: none;
+    outline: none;
+    margin-bottom: 1rem;
+    color: #444;
+} */
+.contact-form textarea{
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    padding: 1rem 0;
+    outline: none;
+}
+.contact-form .contact-button{
+    margin-top: 5rem;
+}
+.contact-form h2{
+    padding-bottom: 1rem;
+    border-bottom: 2px solid red;
+}
+
+/* ################ FOOTER ########### */
+
+.footer h2{
+    text-align: center;
+    background: #928f8f;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: white;
+}
+
+
+/* ########## MEDIA QUERIES ######## */
+
+@media(max-width: 768px){
+    .menu-elements{
+        display: none;
+    }
+
+/* ########## ABOUT US ############ */
+
+    .aboutus{
+        display: block;
+    }
+    .aboutus-content{
+        width: 100%;
+    }
+    .aboutus-image{
+        width: 100%;
+    }
+
+/* ######### TYPES OF FOOD ########## */
+
+    .section2-images{
+        display: block;
+        /* margin-bottom: 1rem; */
+    }
+    .image1-container{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .image2-container{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .image3-container{
+        width: 100%;
+    }
+
+/* ############ FOOD MENU ########### */
+
+    .menu-item{
+        display: block;
+    }
+    .items{
+        width: 100%;
+    }
+
+/* ############# FEED BACK ######### */
+
+    .testimonial{
+        display: block;
+    }
+    .tasty{
+        width: 100%;
+    }
+
+/* ######### CONTACT US ########## */
+
+    .contact{
+        display: block;
+    }
+    .contact-sec{
+        width: 100%;
+    }
+}
